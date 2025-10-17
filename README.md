@@ -1,14 +1,14 @@
-# HA og MB Hjerte Spill ❤️
+# HA og MONA Hjerte Spill ❤️
 
 Et interaktivt HTML5-spill inspirert av Meteorite-spillet, designet spesielt for iOS Safari.
 
 ## 🎮 Hvordan spille
 
 - **HA** (rød bokstav) - kan flyttes rundt på skjermen ved å trykke
-- **MB** (blå bokstav) - står stille på høyre side
-- Trykk på skjermen for å flytte HA og skyte hjerter mot MB
-- Når hjertet treffer MB, vokser MB større
-- Når MB blir stor nok og treffer HA, smelter de sammen til ett stort pulserende hjerte ❤️
+- **MONA** (blå bokstav) - står stille på høyre side
+- Trykk på skjermen for å flytte HA og skyte hjerter mot MONA
+- Når hjertet treffer MONA, vokser MONA større
+- Når MONA blir stor nok og treffer HA, smelter de sammen til ett stort pulserende hjerte ❤️
 
 ## 🚀 Spillfunksjoner
 
@@ -33,4 +33,4 @@ Et interaktivt HTML5-spill inspirert av Meteorite-spillet, designet spesielt for
 
 ## 🎯 Mål
 
-Skytt hjerter mot MB for å få den til å vokse, og til slutt se dem smelte sammen i kjærlighet! 💕
+Skytt hjerter mot MONA for å få henne til å vokse, og til slutt se dem smelte sammen i kjærlighet! 💕

@@ -50,7 +50,7 @@
 </head>
 <body>
     <div id="instructions">
-        Trykk på HA for å skyte hjerter mot MB!
+        Trykk på HA for å skyte hjerter mot MONA!
     </div>
     <div id="score">Hjerter: 0</div>
     <canvas id="gameCanvas"></canvas>
@@ -79,7 +79,7 @@
                     targetY: this.canvas.height / 2
                 };
                 
-                this.mb = {
+                this.mona = {
                     x: this.canvas.width - 150,
                     y: this.canvas.height / 2,
                     size: 40,
@@ -112,7 +112,7 @@
                     this.canvas.height = window.innerHeight;
                     this.ha.y = this.canvas.height / 2;
                     this.ha.targetY = this.canvas.height / 2;
-                    this.mb.y = this.canvas.height / 2;
+                    this.mona.y = this.canvas.height / 2;
                     this.bigHeart.y = this.canvas.height / 2;
                 });
             }
@@ -165,8 +165,8 @@
                 const heart = {
                     x: this.ha.x + this.ha.size / 2,
                     y: this.ha.y + this.ha.size / 2,
-                    targetX: this.mb.x + this.mb.size / 2,
-                    targetY: this.mb.y + this.mb.size / 2,
+                    targetX: this.mona.x + this.mona.size / 2,
+                    targetY: this.mona.y + this.mona.size / 2,
                     size: 15,
                     speed: 3,
                     color: '#ff6b9d'
@@ -199,20 +199,20 @@
                     heart.x += heart.vx;
                     heart.y += heart.vy;
                     
-                    // Sjekk kollisjon med MB
-                    const dx = heart.x - (this.mb.x + this.mb.size / 2);
-                    const dy = heart.y - (this.mb.y + this.mb.size / 2);
+                    // Sjekk kollisjon med MONA
+                    const dx = heart.x - (this.mona.x + this.mona.size / 2);
+                    const dy = heart.y - (this.mona.y + this.mona.size / 2);
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     
-                    if (distance < this.mb.size / 2 + heart.size) {
-                        // Treff! MB vokser
-                        this.mb.growth += 20;
-                        this.mb.size = 40 + (this.mb.growth / this.mb.maxGrowth) * 60;
+                    if (distance < this.mona.size / 2 + heart.size) {
+                        // Treff! MONA vokser
+                        this.mona.growth += 20;
+                        this.mona.size = 40 + (this.mona.growth / this.mona.maxGrowth) * 60;
                         this.hearts.splice(i, 1);
                         this.heartCount++;
                         document.getElementById('score').textContent = `Hjerter: ${this.heartCount}`;
                         
-                        // Sjekk om MB er stor nok til å kollidere med HA
+                        // Sjekk om MONA er stor nok til å kollidere med HA
                         this.checkHACollision();
                     } else if (heart.x < 0 || heart.x > this.canvas.width || 
                               heart.y < 0 || heart.y > this.canvas.height) {
@@ -223,11 +223,11 @@
             }
             
             checkHACollision() {
-                const dx = this.ha.x - this.mb.x;
-                const dy = this.ha.y - this.mb.y;
+                const dx = this.ha.x - this.mona.x;
+                const dy = this.ha.y - this.mona.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 
-                if (distance < (this.ha.size + this.mb.size) / 2) {
+                if (distance < (this.ha.size + this.mona.size) / 2) {
                     // Kollisjon! Start stor hjerte animasjon
                     this.gameState = 'merged';
                     this.bigHeart.growing = true;
@@ -253,7 +253,7 @@
                     this.drawBigHeart();
                 } else {
                     this.drawHA();
-                    this.drawMB();
+                    this.drawMONA();
                     this.drawHearts();
                 }
             }
@@ -275,10 +275,10 @@
                 this.ctx.restore();
             }
             
-            drawMB() {
+            drawMONA() {
                 this.ctx.save();
-                this.ctx.fillStyle = this.mb.color;
-                this.ctx.font = `bold ${this.mb.size}px Arial`;
+                this.ctx.fillStyle = this.mona.color;
+                this.ctx.font = `bold ${this.mona.size}px Arial`;
                 this.ctx.textAlign = 'center';
                 this.ctx.textBaseline = 'middle';
                 
@@ -288,7 +288,7 @@
                 this.ctx.shadowOffsetX = 3;
                 this.ctx.shadowOffsetY = 3;
                 
-                this.ctx.fillText('MB', this.mb.x, this.mb.y);
+                this.ctx.fillText('MONA', this.mona.x, this.mona.y);
                 this.ctx.restore();
             }
             
